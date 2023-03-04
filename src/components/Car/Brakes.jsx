@@ -5,9 +5,8 @@ Command: npx gltfjsx@6.1.4 public/Brakes.gltf
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
-
 function Brakes(props) {
-  const { nodes, materials } = useGLTF('/Brakes.gltf')
+  const { nodes, materials } = useGLTF('./Brakes.gltf')
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -21,6 +20,6 @@ function Brakes(props) {
   )
 }
 
-useGLTF.preload('/Brakes.gltf')
+useGLTF.preload('./Brakes.gltf')
 
 export default Brakes

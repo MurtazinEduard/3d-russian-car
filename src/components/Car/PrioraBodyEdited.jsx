@@ -20,12 +20,6 @@ function PrioraBodyEdited(props) {
     [BodyColor]
   );
 
-  const texture = useCubeTexture(
-    ["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"],
-    {
-      path: "envMap/",
-    }
-  );
   const envMap = useEnvironment({ files: "envMap/belfast.hdr" });
 
 

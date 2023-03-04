@@ -19,7 +19,7 @@ const LamboRims = forwardRef(() => {
   );
 });
 function LamboRim(props) {
-  const { nodes, materials } = useGLTF("public/LamboWheels.gltf");
+  const { nodes, materials } = useGLTF("/LamboWheels.gltf");
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -35,6 +35,6 @@ function LamboRim(props) {
   );
 }
 
-useGLTF.preload("public/LamboWheels.gltf");
+useGLTF.preload("/LamboWheels.gltf");
 
 export default LamboRims;

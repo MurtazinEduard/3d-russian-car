@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Lamp(props) {
-  const { nodes, materials } = useGLTF('/lamp.glb')
+  const { nodes, materials } = useGLTF('/portfolio2023/assets/lamp.glb')
   return (
     <group {...props} dispose={null}>
       <group scale={0.01}>
@@ -12,5 +12,5 @@ export function Lamp(props) {
   )
 }
 
-useGLTF.preload('/lamp.glb')
+useGLTF.preload('/portfolio2023/assets/lamp.glb')
 export default Lamp

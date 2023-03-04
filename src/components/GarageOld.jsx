@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 function GarageOld(props) {
-  const { nodes, materials } = useGLTF("/garageOld.glb");
+  const { nodes, materials } = useGLTF("/portfolio2023/assets/garageOld.glb");
   /* const blockPositions = [
     { position: [9.07, -4.8, 0.36], rotation: [Math.PI / 2, 0, -1.59] },
     { position: [0.23, -4.8, 0.26], rotation: [Math.PI / 2, 0, -1.53] },
@@ -235,7 +235,7 @@ function Other({ nodes, materials }) {
 }
 
 function Lamp(props) {
-  const { nodes, materials } = useGLTF("/lamp.glb");
+  const { nodes, materials } = useGLTF("/portfolio2023/assets/lamp.glb");
   return (
     <group {...props} dispose={null}>
       <group scale={0.04}>
@@ -250,8 +250,8 @@ function Lamp(props) {
   );
 }
 
-useGLTF.preload("/lamp.glb");
+useGLTF.preload("/portfolio2023/assets/lamp.glb");
 
-useGLTF.preload("/garageOld.glb");
+useGLTF.preload("/portfolio2023/assets/garageOld.glb");
 
 export default GarageOld;

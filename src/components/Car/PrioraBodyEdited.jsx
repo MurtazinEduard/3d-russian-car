@@ -2,7 +2,7 @@ import React, { useRef, useMemo } from "react";
 import {  useGLTF, useEnvironment } from "@react-three/drei";
 import * as THREE from "three";
 function PrioraBodyEdited(props) {
-  const { nodes, materials } = useGLTF("/PrioraBody.gltf");
+  const { nodes, materials } = useGLTF("/portfolio2023/assets/PrioraBody.gltf");
   console.log(materials.priora_body__pri1);
 
   const BodyColor = /* useSelector((state) => state.color.color); */ "#fcba03";
@@ -13,7 +13,7 @@ function PrioraBodyEdited(props) {
     [BodyColor]
   );
 
-  const envMap = useEnvironment({ files: "/envMap/belfast.hdr" });
+  const envMap = useEnvironment({ files: "/portfolio2023/assets/envMap/belfast.hdr" });
 
 
   materials.priora_body__pri1.color = colorMemo;
@@ -152,6 +152,6 @@ function PrioraBodyEdited(props) {
   );
 }
 
-useGLTF.preload("/PrioraBody.gltf");
+useGLTF.preload("/portfolio2023/assets/PrioraBody.gltf");
 
 export default PrioraBodyEdited;

@@ -2,7 +2,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 function MainTires(props) {
-  const { nodes, materials } = useGLTF('/MainTires.gltf')
+  const { nodes, materials } = useGLTF('/portfolio2023/assets/MainTires.gltf')
   return (
     <group {...props} dispose={null}>
       <group >
@@ -14,6 +14,6 @@ function MainTires(props) {
   )
 }
 
-useGLTF.preload('/MainTires.gltf')
+useGLTF.preload('/portfolio2023/assets/MainTires.gltf')
 
 export default MainTires

@@ -1,7 +1,8 @@
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
+/* import brakes from '/Brakes.gltf' */
 function Brakes(props) {
-  const { nodes, materials } = useGLTF('/Brakes.gltf')
+  const { nodes, materials } = useGLTF('/portfolio2023/assets/Brakes.gltf')
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -15,6 +16,6 @@ function Brakes(props) {
   )
 }
 
-useGLTF.preload('/Brakes.gltf')
+useGLTF.preload('/portfolio2023/assets/Brakes.gltf')
 
 export default Brakes

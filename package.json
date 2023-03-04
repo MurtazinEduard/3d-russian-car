@@ -1,12 +1,15 @@
 {
   "name": "my-website",
   "private": true,
+  "homepage": "https://murtazineduard.github.io/portfolio2023/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -17,6 +20,7 @@
     "@react-three/postprocessing": "^2.7.0",
     "@reduxjs/toolkit": "^1.9.3",
     "babel-plugin-glsl": "^1.0.0",
+    "gh-pages": "^5.0.0",
     "gsap": "^3.11.4",
     "react": "^18.2.0",
     "react-color": "^2.19.3",

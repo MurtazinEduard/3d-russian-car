@@ -4,12 +4,10 @@ Command: npx gltfjsx@6.1.4 public/PrioraBody.gltf
 */
 
 import React, { useRef, useMemo } from "react";
-import { useCubeTexture, useGLTF, useEnvironment, MeshReflectorMaterial, } from "@react-three/drei";
+import {  useGLTF, useEnvironment } from "@react-three/drei";
 import * as THREE from "three";
-import { useLoader } from "@react-three/fiber";
-/* import texturePath from '../../assets/envMap/' */
 function PrioraBodyEdited(props) {
-  const { nodes, materials } = useGLTF("/PrioraBody.gltf");
+  const { nodes, materials } = useGLTF("public/PrioraBody.gltf");
   console.log(materials.priora_body__pri1);
 
   const BodyColor = /* useSelector((state) => state.color.color); */ "#fcba03";
@@ -20,7 +18,7 @@ function PrioraBodyEdited(props) {
     [BodyColor]
   );
 
-  const envMap = useEnvironment({ files: "envMap/belfast.hdr" });
+  const envMap = useEnvironment({ files: "public/envMap/belfast.hdr" });
 
 
   materials.priora_body__pri1.color = colorMemo;
@@ -159,6 +157,6 @@ function PrioraBodyEdited(props) {
   );
 }
 
-useGLTF.preload("/PrioraBody.gltf");
+useGLTF.preload("public/PrioraBody.gltf");
 
 export default PrioraBodyEdited;

@@ -1,0 +1,29 @@
+.Loader
+    position: absolute
+    margin: 0
+    padding: 0
+    width: 100vw
+    height: 100vh
+    background: #ba959541
+    top: 0
+    background-image: url("../../assets/loaderDoors.jpg")
+    background-repeat: no-repeat
+    background-size: 100% 100%
+.LoaderEnterActive
+    position: absolute
+    margin: 0
+    padding: 0
+    width: 100vw
+    height: 100vh
+    background: #ba959541
+    top: 0
+    background-image: url("../../assets/loaderDoors.jpg")
+    background-repeat: no-repeat
+    background-size: 100% 100%
+.LoaderExit
+    animation: show-loader 1s forwards
+@keyframes show-loader
+    0%
+        transform: translateY(0)
+    100%
+        transform: translateY(-100vh)

@@ -1,23 +1,11 @@
 import React, { useEffect, useLayoutEffect, useRef } from "react";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
-import {
-  Lightformer,
-  OrbitControls,
-  PerspectiveCamera,
-  Stage,
-  useScroll,
-  SpotLight,
-  Stars,
-  Sparkles,
-} from "@react-three/drei";
+import { PerspectiveCamera, Stage, useScroll, SpotLight, OrbitControls } from "@react-three/drei";
 
 import gsap from "gsap";
-import Plane from "./Plane";
 import Priora from "./Car/Priora";
-import GarageOld from "./GarageOld";
-import Text from "./Text";
-import { Bloom, EffectComposer, GodRays, Noise, Vignette } from "@react-three/postprocessing";
+import Garage from "./Garage";
 
 const Scene = () => {
   const scroll = useScroll();
@@ -30,7 +18,7 @@ const Scene = () => {
   useLayoutEffect(() => {
     tl.current = gsap.timeline();
     //  Приближение к тачке спереди
-    tl.current.to(
+    /* tl.current.to(
       cameraControlsRef.current.position,
       {
         x: 0,
@@ -134,15 +122,14 @@ const Scene = () => {
         duration: 1,
       },
       5
-    );
+    ); */
   }, []);
   return (
     <>
       <color attach={"background"} args={["#101010"]} />
       <fog attach="fog" args={["#040404", 10, 20]} />
-      <ambientLight intensity={0.21} />
+      <ambientLight intensity={0.91} />
       {/* <pointLight position={[0, 3, -9]} intensity={0.05} /> */}
-      {/* <pointLight position={[0, 3, -1]} intensity={0.25} /> */}
       <SpotLight
         position={[0, 2.6, 0]}
         castShadow
@@ -154,7 +141,6 @@ const Scene = () => {
         intensity={20}
         color={"#a58ba6"}
       />
-      {/* <pointLight position={[-5, 5, -5]} intensity={0.65} /> */}
       {/* <Stage environment={"dawn"} intensity={0.01} contactShasow={false} adjustCamera={false} /> */}
       <PerspectiveCamera
         makeDefault
@@ -164,10 +150,9 @@ const Scene = () => {
       />
 
       <Priora position={[1, 0, 0]} />
-      
-      <GarageOld scale={0.3} position={[-2.8, 1.75, 0]} rotation={[0, -Math.PI / 2, 0]} />
+      <Garage scale={0.3} position={[-2.8, 1.75, 0]} rotation={[0, -Math.PI / 2, 0]} />
       {/* <Plane /> */}
-      {/* <OrbitControls scale={false} enableZoom={true} /> */}
+      <OrbitControls scale={false} enableZoom={true} />
       {/* <Stage environment={"warehouse"} intensity={0.11} contactShasow={false}/> */}
       {/* <Lightformer
         intensity={1}
@@ -192,12 +177,6 @@ const Scene = () => {
         intensity={4}
         color={"white"}
       /> */}
-      {/* <Text/> */}
-      {/* <mesh receiveShadow castShadow position={[2, 1,-1]}>
-        <boxGeometry  args={[4, 2, 1]} />
-        <meshLambertMaterial />
-      </mesh> */}
-      {/* <Effects/> */}
     </>
   );
 };

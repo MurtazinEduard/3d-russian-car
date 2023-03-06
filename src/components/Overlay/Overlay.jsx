@@ -184,6 +184,7 @@ const Overlay = () => {
                 min={-0.05}
                 max={0.15}
                 step={0.01}
+                defaultValue={0}
                 /* getAriaValueText={valuetext} */
                 color="secondary"
               />

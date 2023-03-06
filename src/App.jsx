@@ -16,7 +16,7 @@ function App() {
           <Scene />
           <Overlay />
         </ScrollControls>
-        <OrbitControls scale={false} enableZoom={true} />
+        {/* <OrbitControls scale={false} enableZoom={true} /> */}
         {/* <EffectComposer>
           <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
           <Vignette eskil={true} offset={0.1} darkness={1} />

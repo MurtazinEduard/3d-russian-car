@@ -18,7 +18,7 @@ const Scene = () => {
   useLayoutEffect(() => {
     tl.current = gsap.timeline();
     //  Приближение к тачке спереди
-    /* tl.current.to(
+    tl.current.to(
       cameraControlsRef.current.position,
       {
         x: 0,
@@ -122,7 +122,7 @@ const Scene = () => {
         duration: 1,
       },
       5
-    ); */
+    );
   }, []);
   return (
     <>

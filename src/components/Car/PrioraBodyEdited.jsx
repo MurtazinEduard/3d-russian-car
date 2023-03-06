@@ -1,20 +1,19 @@
 import React, { useRef, useMemo } from "react";
-import {  useGLTF, useEnvironment } from "@react-three/drei";
+import { useGLTF, useEnvironment, Text } from "@react-three/drei";
 import * as THREE from "three";
 import { useSelector } from "react-redux";
 function PrioraBodyEdited(props) {
   const { nodes, materials } = useGLTF("/portfolio2023/assets/PrioraBody.gltf");
-  const BodyColor = useSelector((state => state.control.color))
-  console.log(BodyColor)
-  const BodyHeight = useSelector((state) => state.control.suspension); 
-
+  const BodyColor = useSelector((state) => state.control.color);
+  console.log(BodyColor);
+  const BodyHeight = useSelector((state) => state.control.suspension);
+  const PlateNumbers = useSelector((state) => state.control.plateNumbers)
   const colorMemo = useMemo(
     () => new THREE.Color(BodyColor).convertSRGBToLinear(),
     [BodyColor]
   );
 
   const envMap = useEnvironment({ files: "/portfolio2023/assets/envMap/belfast.hdr" });
-
 
   materials.priora_body__pri1.color = colorMemo;
   materials.priora_body__pri1.metalness = 0.8;
@@ -38,7 +37,6 @@ function PrioraBodyEdited(props) {
       <mesh
         geometry={nodes.Mesh3_default1_skpE862_1_Group1_Model_11.geometry}
         material={materials.priora_body__pri1}
-        
       >
         {/* <MeshReflectorMaterial
           color={colorMemo}
@@ -144,6 +142,15 @@ function PrioraBodyEdited(props) {
         geometry={nodes.Mesh23_default1_skpE862_1_Group1_Model_1.geometry}
         material={materials.priora_misc__spe1}
       />
+      <Text
+        scale={0.1}
+        color={"black"}
+        position={[-0.9, -2.57, -0.4]}
+        rotation={[Math.PI / 2, Math.PI / 0.5, Math.PI / 1]}
+        characters="abcdefghijklmnopqrstuvwxyz0123456789!"
+      >
+        {PlateNumbers}
+      </Text>
       <mesh
         geometry={nodes.Mesh23_default1_skpE862_1_Group1_Model_2.geometry}
         material={materials.Matte__FF050505_1}

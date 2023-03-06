@@ -10,7 +10,7 @@ import { useFrame } from "@react-three/fiber";
 import { useState } from "react";
 import { ChromePicker } from "react-color";
 import { useDispatch } from "react-redux";
-import { colorControl, suspensionControl, wheelsControl } from "../../store/controlSlice";
+import { colorControl, plateNumbersControl, suspensionControl, wheelsControl } from "../../store/controlSlice";
 import style from "./Overlay.module.sass";
 const Section = (props) => {
   return (
@@ -80,7 +80,10 @@ const Overlay = () => {
 
   const changeCarWheels = (wheel) => {
     dispatch(wheelsControl(wheel))
-    console.log(wheel)
+  }
+  const changePlateNumbers = (number) => {
+    dispatch(plateNumbersControl(number))
+    console.log(number)
   }
 
   return (
@@ -197,7 +200,7 @@ const Overlay = () => {
         <Section opacity={opacitySixthSection}>
           <div className={style.Sixth}>
             <h1>Plate Numbers✍</h1>
-            <input placeholder="Enter Your Number" />
+            <input onChange={(e) => changePlateNumbers(e.target.value)} placeholder="Enter Your Number" />
             <div className={style.gradient__divider3} />
           </div>
         </Section>

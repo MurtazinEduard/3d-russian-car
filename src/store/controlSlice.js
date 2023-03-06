@@ -6,7 +6,8 @@ const initialState = {
   wheels: 'Lambo' */
   color: "#ff0000",
   suspension: 0,
-    wheels: 'lambo' //lambo, classic
+  wheels: "lambo", //lambo, classic
+  plateNumbers: "B888BB88",
 };
 
 export const controlSlice = createSlice({
@@ -30,8 +31,11 @@ export const controlSlice = createSlice({
       state.suspension = action.payload;
     },
     wheelsControl: (state, action) => {
-        state.wheels = action.payload
-    }
+      state.wheels = action.payload;
+    },
+    plateNumbersControl: (state, action) => {
+      state.plateNumbers = action.payload;
+    },
   },
 });
 
@@ -43,5 +47,6 @@ export const { wheelsControl } = colorSlice.actions; */
 export const { colorControl } = controlSlice.actions;
 export const { suspensionControl } = controlSlice.actions;
 export const { wheelsControl } = controlSlice.actions;
+export const { plateNumbersControl } = controlSlice.actions;
 
 export default controlSlice.reducer;

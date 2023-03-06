@@ -152,7 +152,7 @@ const Scene = () => {
       <Priora position={[1, 0, 0]} />
       <Garage scale={0.3} position={[-2.8, 1.75, 0]} rotation={[0, -Math.PI / 2, 0]} />
       {/* <Plane /> */}
-      <OrbitControls scale={false} enableZoom={true} />
+      
       {/* <Stage environment={"warehouse"} intensity={0.11} contactShasow={false}/> */}
       {/* <Lightformer
         intensity={1}

@@ -1,7 +1,7 @@
 import "./App.css";
 
 import { Canvas } from "@react-three/fiber";
-import { ScrollControls, Sparkles, Stats } from "@react-three/drei";
+import { OrbitControls, ScrollControls, Sparkles, Stats } from "@react-three/drei";
 
 import Scene from "./components/Scene";
 import Loader from "./components/Loader/Loader";
@@ -14,8 +14,9 @@ function App() {
       <Canvas>
         <ScrollControls pages={7} damping={0.2}>
           <Scene />
-          {/* <Overlay /> */}
+          <Overlay />
         </ScrollControls>
+        <OrbitControls scale={false} enableZoom={true} />
         {/* <EffectComposer>
           <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} />
           <Vignette eskil={true} offset={0.1} darkness={1} />

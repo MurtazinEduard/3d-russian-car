@@ -1,16 +1,16 @@
 import {
   FormControl,
   FormControlLabel,
-  FormLabel,
   Radio,
   RadioGroup,
   Slider,
-  TextField,
 } from "@mui/material";
 import { Scroll, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useState } from "react";
 import { ChromePicker } from "react-color";
+import { useDispatch } from "react-redux";
+import { colorControl, suspensionControl, wheelsControl } from "../../store/controlSlice";
 import style from "./Overlay.module.sass";
 const Section = (props) => {
   return (
@@ -29,6 +29,7 @@ const Section = (props) => {
 
 const Overlay = () => {
   const scroll = useScroll();
+  const dispatch = useDispatch();
   const [opacityFirstSection, setOpacityFirstSection] = useState(1);
   const [opacitySecondSection, setOpacitySecondSection] = useState(1);
   const [opacityThirdSection, setOpacityThirdSection] = useState(1);
@@ -69,6 +70,19 @@ const Overlay = () => {
     setOpacityLastSection(scroll.range(22 / 24, 1 / 12));
   });
 
+  const changeBodyColor = (color) => {
+    setColor(color);
+    dispatch(colorControl(color.hex));
+  }
+  const changeBodyHeight = (height) => {
+    dispatch(suspensionControl(height))
+  }
+
+  const changeCarWheels = (wheel) => {
+    dispatch(wheelsControl(wheel))
+    console.log(wheel)
+  }
+
   return (
     <Scroll html>
       <div className={style.Overlay}>
@@ -76,7 +90,6 @@ const Overlay = () => {
           <div className={style.First}>
             <h1>{`<h1>Hello, I'm Eduard Murtazin<h1/>`}</h1>
             <hr />
-
             <div className={style.subtitle}>
               <div className={style.gradient__divider} />
               <span>Middle Frontend Developer</span>
@@ -111,7 +124,7 @@ const Overlay = () => {
               <li>MobX</li>
               <li>VueJS/VueX</li>
               <li>THREE.js</li>
-              <li>Tailwind</li>
+              <li>i18n</li>
               <li>MUI</li>
               <li>Vite</li>
             </ul>
@@ -132,16 +145,16 @@ const Overlay = () => {
           <div className={style.Third}>
             <h1>Choose the color 🌠</h1>
             <div className={style.picker}>
-              <ChromePicker disableAlpha onChange={(e) => setColor(e)} color={color} />
+              <ChromePicker disableAlpha onChange={(e) => changeBodyColor(e)} color={color} />
             </div>
           </div>
         </Section>
         <Section opacity={opacityFourthSection}>
           <div className={style.Fourth}>
             <h1>Choose the rims 🛞 💿</h1>
-            <FormControl>
+            <FormControl >
               <span>Rims:</span>
-              <RadioGroup
+              <RadioGroup onChange={(e) => changeCarWheels(e.target.value)}
                 aria-labelledby="demo-radio-buttons-group-label"
                 defaultValue="lambo"
                 name="radio-buttons-group"
@@ -156,11 +169,6 @@ const Overlay = () => {
                   control={<Radio color="secondary" />}
                   label="Classic"
                 />
-                <FormControlLabel
-                  value="other"
-                  control={<Radio color="secondary" />}
-                  label="Other"
-                />
               </RadioGroup>
             </FormControl>
             <div className={style.gradient__divider3} />
@@ -171,8 +179,11 @@ const Overlay = () => {
             <h1>Suspension Height👻🔝</h1>
             <div className={style.slider}>
               <Slider
+                onChange={(e) => changeBodyHeight(e.target.value)}
                 aria-label="Temperature"
-                defaultValue={30}
+                min={-0.05}
+                max={0.15}
+                step={0.01}
                 /* getAriaValueText={valuetext} */
                 color="secondary"
               />

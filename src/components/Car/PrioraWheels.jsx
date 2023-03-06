@@ -2,6 +2,7 @@ import React from "react";
 import PrioraBrakes from "./PrioraBrakes";
 import LamboRims from "./Wheels/LamboRims";
 import { useGLTF } from "@react-three/drei";
+import { useSelector } from "react-redux";
 
 const PrioraWheels = () => {
   
@@ -57,12 +58,14 @@ const PrioraWheels = () => {
       id: 1,
     },
   ];
+  const wheels = useSelector((store => store.control.wheels))
   return (
     <group>
       <PrioraTires />
       <PrioraBrakes params={brakesParams} />
+      {wheels === 'classic' ? <BbsWheels /> : <LamboRims/>}
       {/* <LamboRims params={LamboRimsParams} /> */}
-      <BbsWheels />
+      {/* <BbsWheels /> */}
     </group>
   );
 };

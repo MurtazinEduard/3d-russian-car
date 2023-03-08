@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 function PrioraBodyEdited(props) {
   const { nodes, materials } = useGLTF("/portfolio2023/assets/PrioraBody.gltf");
   const BodyColor = useSelector((state) => state.control.color);
-  console.log(BodyColor);
   const BodyHeight = useSelector((state) => state.control.suspension);
   const PlateNumbers = useSelector((state) => state.control.plateNumbers)
   const colorMemo = useMemo(

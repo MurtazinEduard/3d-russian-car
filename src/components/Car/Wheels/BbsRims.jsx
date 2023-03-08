@@ -3,7 +3,6 @@ import React from 'react'
 
 function BbsRims(props) {
     const { nodes, materials } = useGLTF("/portfolio2023/assets/bbsWheel.gltf");
-    console.log(materials)
     const envMap = useEnvironment({ files: "/portfolio2023/assets/envMap/belfast.hdr" });
     materials.MainColor.envMap = envMap;
     return (

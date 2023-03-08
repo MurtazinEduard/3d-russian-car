@@ -6,7 +6,14 @@
         display: flex
         flex-direction: column
         justify-content: center
-
+    .scrolldown
+        position: absolute
+        color: white
+        width: 100vw
+        /* margin: auto 50% */
+        text-align: center
+        top: 80vh
+        animation: scrolldown 2s ease infinite
 .Section
     height: 100vh
     display: flex
@@ -52,13 +59,7 @@
             white-space: wrap
             @media screen and ( max-width: 500px )
                 font-size: 1.2em
-    .scrolldown
-        position: absolute
-        color: white
-        width: 100vw
-        text-align: center
-        top: 80vh
-        animation: scrolldown 2s ease infinite
+    
 .Second
     h1
         text-align: center

@@ -84,9 +84,15 @@ const Overlay = () => {
 
   return (
     <Scroll html>
-      
       <div className={style.Overlay}>
-      <h1 className={style.scrolldown}>↓ Scroll down ↓</h1>
+        <h1
+          style={{
+            opacity: opacityFirstSection,
+          }}
+          className={style.scrolldown}
+        >
+          ↓ Scroll down ↓
+        </h1>
         <Section opacity={opacityFirstSection}>
           <div className={style.First}>
             <h1>{`<h1>Hello, I'm Eduard Murtazin<h1/>`}</h1>
@@ -97,9 +103,7 @@ const Overlay = () => {
               <div className={style.gradient__divider2} />
             </div>
             <div className={style.subtitle}>
-              <h2>
-                {`<h2>I'm glad to present you my portfolio<h2/>`}
-              </h2>
+              <h2>{`<h2>I'm glad to present you my portfolio<h2/>`}</h2>
             </div>
             <span>About Me:</span>
             <ul>
@@ -112,7 +116,6 @@ const Overlay = () => {
               <li>Ready to Relocate✌️</li>
             </ul>
             <div className={style.gradient__divider3} />
-          
           </div>
         </Section>
         <Section opacity={opacitySecondSection}>
@@ -183,7 +186,6 @@ const Overlay = () => {
                 />
               </RadioGroup>
             </FormControl>
-            <div className={style.gradient__divider3} />
           </div>
         </Section>
         <Section opacity={opacityFifthSection}>
@@ -202,8 +204,6 @@ const Overlay = () => {
               />
               🔩
             </div>
-
-            <div className={style.gradient__divider2} />
           </div>
         </Section>
         <Section opacity={opacitySixthSection}>
@@ -213,9 +213,8 @@ const Overlay = () => {
               maxLength={8}
               onChange={(e) => changePlateNumbers(e.target.value)}
               placeholder="ENG ONLY"
-              defaultValue={'Edward86'}
+              defaultValue={"Edward86"}
             />
-            <div className={style.gradient__divider3} />
           </div>
         </Section>
         <Section opacity={opacityLastSection}>
@@ -238,7 +237,6 @@ const Overlay = () => {
                 </a>
               </li>
             </ul>
-            <div className={style.gradient__divider} />
           </div>
         </Section>
       </div>

@@ -84,6 +84,7 @@ const Overlay = () => {
 
   return (
     <Scroll html>
+      
       <div className={style.Overlay}>
         <Section opacity={opacityFirstSection}>
           <div className={style.First}>
@@ -110,6 +111,7 @@ const Overlay = () => {
               <li>Ready to Relocate✌️</li>
             </ul>
             <div className={style.gradient__divider3} />
+            <h1 className={style.scrolldown}>↓ Scroll down ↓</h1>
           </div>
         </Section>
         <Section opacity={opacitySecondSection}>

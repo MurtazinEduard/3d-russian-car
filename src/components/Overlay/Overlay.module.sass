@@ -6,7 +6,7 @@
         display: flex
         flex-direction: column
         justify-content: center
-        
+
 .Section
     height: 100vh
     display: flex
@@ -17,7 +17,7 @@
     box-sizing: border-box
     @media screen and ( max-width: 500px )
         width: 100%
-        
+
     .wrapper
         width: 100%
         color: #000000
@@ -27,13 +27,14 @@
         color: #f9f9f9
         text-shadow: 1px 1px 1px #000
         font-weight: bold
-        
+
 .First
     h1
         font-size: 1.5em
         text-align: center
         @media screen and ( max-width: 500px )
             font-size: 1.1em
+
     .subtitle
         display: flex
         justify-content: center
@@ -51,6 +52,13 @@
             white-space: wrap
             @media screen and ( max-width: 500px )
                 font-size: 1.2em
+    .scrolldown
+        position: absolute
+        color: white
+        width: 100vw
+        text-align: center
+        top: 80vh
+        animation: scrolldown 2s ease infinite
 .Second
     h1
         text-align: center
@@ -135,3 +143,10 @@
         background-position-x: 0%
     100%
         background-position-x: 100%
+@keyframes scrolldown
+    0%
+        top: 80vh
+    50%
+        top: 81vh
+    100%
+        top: 80vh

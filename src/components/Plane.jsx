@@ -1,8 +1,8 @@
 import { useTexture } from "@react-three/drei";
 import React from "react";
 import * as THREE from "three";
-import dispMap from "/portfolio2023/assets/planeTextures/disp.jpg";
-import diffMap from "/portfolio2023/assets/planeTextures/diff.jpg";
+import dispMap from "../assets/planeTextures/disp.jpg";
+import diffMap from "../assets/planeTextures/diff.jpg";
 const Plane = () => {
   const textures = useTexture(
     {

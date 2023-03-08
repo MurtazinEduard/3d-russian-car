@@ -1,7 +1,7 @@
 import "./App.css";
 
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, ScrollControls, Sparkles, Stats } from "@react-three/drei";
+import { OrbitControls, ScrollControls, } from "@react-three/drei";
 
 import Scene from "./components/Scene";
 import Loader from "./components/Loader/Loader";
@@ -15,14 +15,6 @@ function App() {
           <Scene />
           <Overlay />
         </ScrollControls>
-        {/* <OrbitControls scale={false} enableZoom={true} /> */}
-        <Sparkles
-          count={200}
-          scale={[10, 3, 10]}
-          size={1}
-          speed={0.4}
-          position={[0, 1, 0]}
-        />
       </Canvas>
       <Loader />
     </div>

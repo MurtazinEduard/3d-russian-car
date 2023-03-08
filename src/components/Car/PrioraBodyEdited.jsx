@@ -37,15 +37,7 @@ function PrioraBodyEdited(props) {
       <mesh
         geometry={nodes.Mesh3_default1_skpE862_1_Group1_Model_11.geometry}
         material={materials.priora_body__pri1}
-      >
-        {/* <MeshReflectorMaterial
-          color={colorMemo}
-          roughness={0.01}
-          metalness={0.5}
-          envMap={texture}
-          envMapIntensity={0.1}
-        /> */}
-      </mesh>
+      />
       {/* Стекла */}
       <mesh
         geometry={nodes.Mesh3_default1_skpE862_1_Group1_Model_2.geometry}

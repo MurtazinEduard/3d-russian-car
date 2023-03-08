@@ -3,8 +3,7 @@ import { useProgress } from "@react-three/drei";
 import style from "./Loader.module.sass";
 import { CSSTransition } from "react-transition-group";
 const Loader = () => {
-  const { active, progress, errors, item, loaded, total } = useProgress();
-  /* console.log(progress) */
+  const { active} = useProgress();
   return (
     <>
       <CSSTransition
@@ -20,7 +19,7 @@ const Loader = () => {
         }}
       >
         <div className={style.Loader}>
-          <h1>{progress}%</h1>
+          <h1>Loading...</h1>
         </div>
       </CSSTransition>
     </>

@@ -1,16 +1,15 @@
-import {
-  FormControl,
-  FormControlLabel,
-  Radio,
-  RadioGroup,
-  Slider,
-} from "@mui/material";
+import { FormControl, FormControlLabel, Radio, RadioGroup, Slider } from "@mui/material";
 import { Scroll, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useState } from "react";
 import { ChromePicker } from "react-color";
 import { useDispatch } from "react-redux";
-import { colorControl, plateNumbersControl, suspensionControl, wheelsControl } from "../../store/controlSlice";
+import {
+  colorControl,
+  plateNumbersControl,
+  suspensionControl,
+  wheelsControl,
+} from "../../store/controlSlice";
 import style from "./Overlay.module.sass";
 const Section = (props) => {
   return (
@@ -20,9 +19,7 @@ const Section = (props) => {
         opacity: props.opacity,
       }}
     >
-      <div>
-        <div className={style.wrapper}>{props.children}</div>
-      </div>
+      <div className={style.wrapper}>{props.children}</div>
     </section>
   );
 };
@@ -73,18 +70,17 @@ const Overlay = () => {
   const changeBodyColor = (color) => {
     setColor(color);
     dispatch(colorControl(color.hex));
-  }
+  };
   const changeBodyHeight = (height) => {
-    dispatch(suspensionControl(height))
-  }
+    dispatch(suspensionControl(height));
+  };
 
   const changeCarWheels = (wheel) => {
-    dispatch(wheelsControl(wheel))
-  }
+    dispatch(wheelsControl(wheel));
+  };
   const changePlateNumbers = (number) => {
-    dispatch(plateNumbersControl(number))
-    console.log(number)
-  }
+    dispatch(plateNumbersControl(number));
+  };
 
   return (
     <Scroll html>
@@ -94,19 +90,21 @@ const Overlay = () => {
             <h1>{`<h1>Hello, I'm Eduard Murtazin<h1/>`}</h1>
             <hr />
             <div className={style.subtitle}>
-              <div className={style.gradient__divider} />
+              <div className={style.gradient__divider2} />
               <span>Middle Frontend Developer</span>
-              <div className={style.gradient__divider} />
+              <div className={style.gradient__divider2} />
             </div>
             <div className={style.subtitle}>
-              <h2>{`<h2>I'm glad to present you my portfolio<h2/>`}</h2>
-              <div className={style.gradient__divider2} />
+              <h2>
+                {`<h2>I'm glad to present you my portfolio<h2/>`}
+              </h2>
             </div>
             <span>About Me:</span>
             <ul>
               <li>Hi, I'm Programmer 👨</li>
               <li>23 years Old 🧍‍♂️</li>
               <li>3 years of Experience💪</li>
+              <li>1 year in commerce🤑</li>
               <li>Eternal Student🎓</li>
               <li>Location Is Nizhnevartovsk🏠</li>
               <li>Ready to Relocate✌️</li>
@@ -124,6 +122,8 @@ const Overlay = () => {
             </div>
             <ul>
               <li>ReactJS/Redux</li>
+              <li>VanillaJS/TypeScript</li>
+              <li>Next.js</li>
               <li>MobX</li>
               <li>VueJS/VueX</li>
               <li>THREE.js</li>
@@ -148,16 +148,22 @@ const Overlay = () => {
           <div className={style.Third}>
             <h1>Choose the color 🌠</h1>
             <div className={style.picker}>
-              <ChromePicker disableAlpha onChange={(e) => changeBodyColor(e)} color={color} />
+              <ChromePicker
+                de
+                disableAlpha
+                onChange={(e) => changeBodyColor(e)}
+                color={color}
+              />
             </div>
           </div>
         </Section>
         <Section opacity={opacityFourthSection}>
           <div className={style.Fourth}>
             <h1>Choose the rims 🛞 💿</h1>
-            <FormControl >
+            <FormControl>
               <span>Rims:</span>
-              <RadioGroup onChange={(e) => changeCarWheels(e.target.value)}
+              <RadioGroup
+                onChange={(e) => changeCarWheels(e.target.value)}
                 aria-labelledby="demo-radio-buttons-group-label"
                 defaultValue="lambo"
                 name="radio-buttons-group"
@@ -200,7 +206,12 @@ const Overlay = () => {
         <Section opacity={opacitySixthSection}>
           <div className={style.Sixth}>
             <h1>Plate Numbers✍</h1>
-            <input onChange={(e) => changePlateNumbers(e.target.value)} placeholder="Enter Your Number" />
+            <input
+              maxLength={8}
+              onChange={(e) => changePlateNumbers(e.target.value)}
+              placeholder="ENG ONLY"
+              defaultValue={'Edward86'}
+            />
             <div className={style.gradient__divider3} />
           </div>
         </Section>
@@ -211,10 +222,18 @@ const Overlay = () => {
             <ul>
               <li>
                 Telegram:
-                <a target='_blank' href="https://t.me/edwardggg"> @edwardggg</a>
+                <a target="_blank" href="https://t.me/edwardggg">
+                  {" "}
+                  @edwardggg
+                </a>
               </li>
               <li>Email: noobas2016@inbox.ru</li>
-              <li>Git: <a target='_blank' href="https://github.com/MurtazinEduard">Click</a></li>
+              <li>
+                Git:{" "}
+                <a target="_blank" href="https://github.com/MurtazinEduard">
+                  Click
+                </a>
+              </li>
             </ul>
             <div className={style.gradient__divider} />
           </div>

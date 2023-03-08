@@ -15,7 +15,6 @@
     "@mui/material": "^5.11.11",
     "@react-three/drei": "^9.56.25",
     "@react-three/fiber": "^8.11.2",
-    "@react-three/postprocessing": "^2.7.0",
     "@reduxjs/toolkit": "^1.9.3",
     "babel-plugin-glsl": "^1.0.0",
     "gh-pages": "^5.0.0",

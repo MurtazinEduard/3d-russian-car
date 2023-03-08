@@ -1,11 +1,13 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useGLTF } from "@react-three/drei";
+import Plane from "./Plane";
 
 export default function Garage(props) {
   const { nodes, materials } = useGLTF("/portfolio2023/assets/garage.gltf");
   return (
     <group {...props} dispose={null}>
       <Lamp />
+      <Plane/>
       {/* Сзади справа */}
       <group
         position={[15.27, 0, 0.06]}
@@ -14,24 +16,6 @@ export default function Garage(props) {
       >
         <mesh geometry={nodes.Object_10.geometry} material={materials.Poll_1} />
         <mesh geometry={nodes.Object_11.geometry} material={materials.poll3} />
-      </group>
-      {/* Спереди справа */}
-      <group
-        position={[-14.83, 0, 0.06]}
-        rotation={[0, Math.PI / 2, 0]}
-        scale={[1, 6.14, 1]}
-      >
-        <mesh geometry={nodes.Object_13.geometry} material={materials.Poll_1} />
-        <mesh geometry={nodes.Object_14.geometry} material={materials.poll3} />
-      </group>
-      {/* Спереди слева */}
-      <group
-        position={[-14.83, 0, -20]}
-        rotation={[0, -Math.PI / 2, 0]}
-        scale={[1, 6.14, 1]}
-      >
-        <mesh geometry={nodes.Object_16.geometry} material={materials.Poll_1} />
-        <mesh geometry={nodes.Object_17.geometry} material={materials.poll3} />
       </group>
       {/* Сзади слева */}
       <group
@@ -49,7 +33,6 @@ export default function Garage(props) {
         rotation={[0, -Math.PI / 2, 0]}
       >
         <mesh geometry={nodes.Object_28.geometry} material={materials["Material.002"]} />
-        <mesh geometry={nodes.Object_29.geometry} material={materials.ground} />
       </group>
       {/* Стена с дырой */}
       <group position={[15.25, 0.04, -9.93]} scale={[0.96, 5.95, 9.08]}>

@@ -1,11 +1,23 @@
+.Overlay
+    padding: 20px
+    box-sizing: border-box
+    @media screen and ( max-width: 500px )
+        width: 100vw
+        display: flex
+        flex-direction: column
+        justify-content: center
+        
 .Section
     height: 100vh
     display: flex
-    /* background: #ff0404 */
     flex-direction: column
     justify-content: center
-    padding: 10px
     align-items: center
+    padding: 10px
+    box-sizing: border-box
+    @media screen and ( max-width: 500px )
+        width: 100%
+        
     .wrapper
         width: 100%
         color: #000000
@@ -15,14 +27,13 @@
         color: #f9f9f9
         text-shadow: 1px 1px 1px #000
         font-weight: bold
-        backdrop-filter: blur(10px)
-
-        /* background-color: white */
-
-        /* box-shadow: 1px 1px 10px #000000 */
+        
 .First
     h1
         font-size: 1.5em
+        text-align: center
+        @media screen and ( max-width: 500px )
+            font-size: 1.1em
     .subtitle
         display: flex
         justify-content: center
@@ -31,11 +42,15 @@
             white-space: nowrap
             font-size: 1.3em
             margin: 0 5px
+            @media screen and ( max-width: 500px )
+                font-size: 1.3em
         h2
             font-size: 1em
             text-align: center
             display: block
-            white-space: nowrap
+            white-space: wrap
+            @media screen and ( max-width: 500px )
+                font-size: 1.2em
 .Second
     h1
         text-align: center

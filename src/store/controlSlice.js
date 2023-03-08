@@ -1,29 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  /* color: "#ff0000",
-  suspension: 0,
-  wheels: 'Lambo' */
-  color: "#ff0000",
+  color: "#4AB7AC",
   suspension: 0,
   wheels: "lambo", //lambo, classic
-  plateNumbers: "B888BB88",
+  plateNumbers: "Edward86",
 };
 
 export const controlSlice = createSlice({
   name: "controlChanger",
   initialState,
   reducers: {
-    /* changer: (state, action) => {
-      state.color = action.payload;
-      
-    },
-    suspensionControl: (state, action) => {
-      state.suspension = action.payload
-    },
-    wheelsControl: (state, action) => {
-      state.wheels = action.payload
-    } */
     colorControl: (state, action) => {
       state.color = action.payload;
     },
@@ -39,14 +26,5 @@ export const controlSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
-/* export const { changer } = colorSlice.actions;
-export const { suspensionControl } = colorSlice.actions;
-export const { wheelsControl } = colorSlice.actions; */
-
-export const { colorControl } = controlSlice.actions;
-export const { suspensionControl } = controlSlice.actions;
-export const { wheelsControl } = controlSlice.actions;
-export const { plateNumbersControl } = controlSlice.actions;
-
+export const { colorControl, suspensionControl, wheelsControl, plateNumbersControl } = controlSlice.actions;
 export default controlSlice.reducer;

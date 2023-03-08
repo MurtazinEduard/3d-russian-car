@@ -27,9 +27,7 @@ function LamboRim(props) {
         <mesh
           geometry={nodes.Object_8.geometry}
           material={materials.Matte__FF070707__spec}
-        >
-          {/* <meshBasicMaterial attach="material" color={"#1f1f1f"} /> */}
-        </mesh>
+        />
       </group>
     </group>
   );

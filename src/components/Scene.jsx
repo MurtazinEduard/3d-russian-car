@@ -101,7 +101,7 @@ const Scene = () => {
       },
       4
     );
-
+        // Главный вид в конце
     tl.current.to(
       cameraControlsRef.current.position,
       {

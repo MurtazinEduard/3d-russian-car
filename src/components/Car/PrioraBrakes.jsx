@@ -16,7 +16,7 @@ const PrioraBrakes = ({ params }) => {
 };
 
 function Brakes(props) {
-  const { nodes, materials } = useGLTF('/portfolio2023/assets/Brakes.gltf')
+  const { nodes, materials } = useGLTF('/3d-russian-car/assets/Brakes.gltf')
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
@@ -30,7 +30,7 @@ function Brakes(props) {
   )
 }
 
-useGLTF.preload('/portfolio2023/assets/Brakes.gltf')
+useGLTF.preload('/3d-russian-car/assets/Brakes.gltf')
 
 
 export default PrioraBrakes;

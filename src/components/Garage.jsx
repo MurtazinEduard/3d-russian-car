@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import Plane from "./Plane";
 
 export default function Garage(props) {
-  const { nodes, materials } = useGLTF("/portfolio2023/assets/garage.gltf");
+  const { nodes, materials } = useGLTF("/3d-russian-car/assets/garage.gltf");
   return (
     <group {...props} dispose={null}>
       <Lamp />
@@ -147,7 +147,7 @@ export default function Garage(props) {
   );
 }
 function Lamp(props) {
-  const { nodes, materials } = useGLTF("/portfolio2023/assets/lamp.glb");
+  const { nodes, materials } = useGLTF("/3d-russian-car/assets/lamp.glb");
   return (
     <group {...props} dispose={null}>
       <group scale={0.04} position={[0, 6, -9.39]}>
@@ -161,5 +161,5 @@ function Lamp(props) {
     </group>
   );
 }
-useGLTF.preload("/portfolio2023/assets/lamp.glb");
-useGLTF.preload("/portfolio2023/assets/garage.gltf");
+useGLTF.preload("/3d-russian-car/assets/lamp.glb");
+useGLTF.preload("/3d-russian-car/assets/garage.gltf");

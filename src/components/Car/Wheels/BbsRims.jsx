@@ -2,8 +2,8 @@ import { useEnvironment, useGLTF } from '@react-three/drei';
 import React from 'react'
 
 function BbsRims(props) {
-    const { nodes, materials } = useGLTF("/portfolio2023/assets/bbsWheel.gltf");
-    const envMap = useEnvironment({ files: "/portfolio2023/assets/envMap/belfast.hdr" });
+    const { nodes, materials } = useGLTF("/3d-russian-car/assets/bbsWheel.gltf");
+    const envMap = useEnvironment({ files: "/3d-russian-car/assets/envMap/belfast.hdr" });
     materials.MainColor.envMap = envMap;
     return (
       <group {...props} dispose={null}>
@@ -45,6 +45,6 @@ function BbsRims(props) {
     );
   }
   
-  useGLTF.preload("/portfolio2023/assets/bbsWheel.gltf");
+  useGLTF.preload("/3d-russian-car/assets/bbsWheel.gltf");
 
 export default BbsRims

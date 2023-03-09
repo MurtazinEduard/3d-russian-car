@@ -3,7 +3,7 @@ import { useGLTF, useEnvironment, Text } from "@react-three/drei";
 import * as THREE from "three";
 import { useSelector } from "react-redux";
 function PrioraBodyEdited(props) {
-  const { nodes, materials } = useGLTF("/portfolio2023/assets/PrioraBody.gltf");
+  const { nodes, materials } = useGLTF("/3d-russian-car/assets/PrioraBody.gltf");
   const BodyColor = useSelector((state) => state.control.color);
   const BodyHeight = useSelector((state) => state.control.suspension);
   const PlateNumbers = useSelector((state) => state.control.plateNumbers)
@@ -12,7 +12,7 @@ function PrioraBodyEdited(props) {
     [BodyColor]
   );
 
-  const envMap = useEnvironment({ files: "/portfolio2023/assets/envMap/belfast.hdr" });
+  const envMap = useEnvironment({ files: "/3d-russian-car/assets/envMap/belfast.hdr" });
 
   materials.priora_body__pri1.color = colorMemo;
   materials.priora_body__pri1.metalness = 0.8;
@@ -150,6 +150,6 @@ function PrioraBodyEdited(props) {
   );
 }
 
-useGLTF.preload("/portfolio2023/assets/PrioraBody.gltf");
+useGLTF.preload("/3d-russian-car/assets/PrioraBody.gltf");
 
 export default PrioraBodyEdited;

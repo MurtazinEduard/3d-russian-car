@@ -45,7 +45,7 @@ const PrioraWheels = () => {
 };
 
 const PrioraTires = (props) => {
-  const { nodes, materials } = useGLTF("/portfolio2023/assets/MainTires.gltf");
+  const { nodes, materials } = useGLTF("/3d-russian-car/assets/MainTires.gltf");
   return (
     <group {...props} dispose={null}>
       <group position= {[-0.129, 0.31, -1.305]} scale={[0.00108, 0.001,0.001]}>

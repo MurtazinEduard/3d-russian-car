@@ -9,7 +9,7 @@
 ### Ok, the model of the car is not mine, but I adapted the gta 5 car to web version
 ### Achieved a stable fps, with great difficulty, but I did it
 
-- [WEB-SITE (link)](https://murtazineduard.github.io/portfolio2023/)
+- [WEB-SITE (link)](https://murtazineduard.github.io/3d-russian-car/)
 
 - DEMO GIF:
       ![3d-configurator (1)](https://user-images.githubusercontent.com/86109245/224107453-7948d2a7-0291-430c-9492-9a449e684791.gif)

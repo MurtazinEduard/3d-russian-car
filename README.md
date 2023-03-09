@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 3d-configurator
 
 ## Hey👋🏽, i'm Edward and this is my web-site👨‍💻

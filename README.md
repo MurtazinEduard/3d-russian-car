@@ -6,8 +6,7 @@
 
 ## **The unique project that you'll not find on YouTube!**
 ### 100% my work from implementation to realization 
-### Ok, the model of the car is not mine, but I adapted the gta 5 car to web version
-### Achieved a stable fps, with great difficulty, but I did it
+### Achieved a stable fps
 
 - [WEB-SITE (link)](https://murtazineduard.github.io/3d-russian-car/)
 

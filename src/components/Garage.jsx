@@ -4,6 +4,7 @@ import Plane from "./Plane";
 
 export default function Garage(props) {
   const { nodes, materials } = useGLTF("/3d-russian-car/assets/garage.gltf");
+  console.log(Date.now())
   return (
     <group {...props} dispose={null}>
       <Lamp />
